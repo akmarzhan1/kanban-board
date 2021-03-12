@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block content %}
+
+<!--Using WTForm to show the forms for registration--> 
+
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <h2 style='text-align: center;margin-bottom:40px;'>Join us today!</h2>
+      <div class="form-group">
+
+        {% if form.username.errors %}
+        {{form.username(class="form-control form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for error in form.username.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {%else%}
+        {{form.username(class="form-control form-control-lg", placeholder="Nickname")}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+
+        {% if form.email.errors %}
+        {{form.email(class="form-control form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for error in form.email.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {%else%}
+        {{form.email(class="form-control form-control-lg", placeholder="Email address")}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {% if form.password.errors %}
+        {{form.password(class="form-control form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for error in form.password.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {%else%}
+        {{form.password(class="form-control form-control-lg", placeholder="Password", style='margin-left:10px;')}}
+        {% endif %}
+      </div>
+      <div class="form-group">
+        {% if form.password_confirm.errors %}
+        {{form.password_confirm(class="form-control form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for error in form.password_confirm.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {%else%}
+        {{form.password_confirm(class="form-control form-control-lg", placeholder="Confirm password", style='margin-left:10px;')}}
+        {% endif %}
+      </div>
+    </fieldset>
+
+    <div class="input['submit']">
+      {{form.submit(class="btn btn-outline-info")}}
+    </div>
+  </form>
+</div>
+{% endblock content %}

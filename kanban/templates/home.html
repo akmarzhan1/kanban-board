@@ -1,0 +1,129 @@
+{% extends "base.html" %} {% block content %}
+
+  <!--Form for adding tasks--> 
+
+<h1 style="text-align: center; margin-bottom:25px;"> Welcome back, {{current_user.username}}!</h1>
+<div class="card" style="margin-bottom:30px; height:auto; margin-left:28px; margin-right:35px;">
+
+    <form action="{{ url_for('add_todo')}}" method="POST">
+        <div class="form-left-column">
+
+            <input type="text" name="title" placeholder="Title of the task" >
+            <input type="text" name="description" placeholder="Description" >
+        </div>
+        <div class="form-right-column">
+            <input type="date" name="deadline" placeholder="New to-do task here"
+                class="form-content">
+            <input type="submit"  name="post" value="+ Add task">
+
+        </div>
+    </form>
+</div>
+
+<hr>
+<br>
+
+  <!--Showing three types of tasks for each user--> 
+
+<div class="container">
+    <div class="column">
+        <h5 style="background-color: rgb(172, 172, 172); color:rgb(65, 65, 65)">To-do</h5>
+
+        <div class="card">
+
+            {% for todo in todos %}
+            <div class="task" style="border-left:7px solid rgb(172, 172, 172)">
+                <div class="left_column">
+                    <div class="dropdown">
+                        <button class="dropbtn" style="font-size:20px; text-align: left;">{{ todo.title }}</button>
+                        <div class="description-content">
+                            <p>Due: {{todo.deadline.strftime('%Y-%m-%d')}}</p>
+                            <p>> {{todo.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_column">
+
+                    <div class="dropdown">
+                        <button class="dropbtn">⋮</button>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('do', todo_id=todo.id) }}" style="color:rgb(10, 83, 200);">Do</a>
+                            <a href="{{ url_for('done', todo_id=todo.id) }}" style="color:rgb(72, 228, 106);">Done</a>
+                            <a href="{{ url_for('delete', todo_id=todo.id) }}"
+                                style="color:rgb(246, 82, 82);">Delete</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="column">
+        <h5 style="background-color: rgb(124, 167, 236); color:rgb(20, 78, 172)">Doing</h5>
+
+        <div class="card">
+            {% for do in dos %}
+            <div class="task" style="border-left:7px solid rgb(124, 167, 236)">
+                <div class="left_column">
+                    <div class="dropdown">
+                        <button class="dropbtn" style="font-size:20px; text-align: left;">{{ do.title }}</button>
+                        <div class="description-content">
+                            <p>Due: {{do.deadline.strftime('%Y-%m-%d')}}</p>
+                            <p>> {{do.description}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right_column">
+
+                    <div class="dropdown">
+                        <button class="dropbtn">⋮</button>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('todo', todo_id=do.id) }}" style="color:rgb(133, 133, 133);">To-do</a>
+                            <a href="{{ url_for('done', todo_id=do.id) }}" style="color:rgb(72, 228, 106);">Done</a>
+                            <a href="{{ url_for('delete', todo_id=do.id) }}" style="color:rgb(246, 82, 82);">Delete</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="column">
+        <h5 style="background-color: rgb(147, 231, 165); color:rgb(38, 78, 47)">Done</h5>
+
+        <div class="card">
+            {% for done in dones %}
+            <div class="task" style="border-left:7px solid rgb(147, 231, 165)">
+                <div class="left_column">
+                    <div class="dropdown">
+                        <button class="dropbtn" style="font-size:20px; text-align: left;">{{ done.title }}</button>
+                        <div class="description-content">
+                            <p>Due: {{done.deadline.strftime('%Y-%m-%d')}}</p>
+                            <p>> {{done.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_column">
+                    <div class="dropdown">
+                        <button class="dropbtn">⋮</button>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('todo', todo_id=done.id) }}" style="color:rgb(133, 133, 133);">To-do</a>
+                            <a href="{{ url_for('do', todo_id=done.id) }}" style="color:rgb(10, 83, 200);">Do</a>
+                            <a href="{{ url_for('delete', todo_id=done.id) }}"
+                                style="color:rgb(246, 82, 82);">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %}
 
-<!--Using WTForm to show the forms for registration--> 
+<!--Using WTForm to show the forms for registration-->
 
 <div class="content-section">
   <form method="POST" action="">
@@ -54,7 +54,8 @@
           {% endfor %}
         </div>
         {%else%}
-        {{form.password_confirm(class="form-control form-control-lg", placeholder="Confirm password", style='margin-left:10px;')}}
+        {{form.password_confirm(class="form-control form-control-lg", placeholder="Confirm password",
+        style='margin-left:10px;')}}
         {% endif %}
       </div>
     </fieldset>

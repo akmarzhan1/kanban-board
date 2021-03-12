@@ -19,9 +19,7 @@ TEST_DB = 'testing.db'
 class Pages(unittest.TestCase):
 
     def setUp(self):
-        '''
-        Set up before each run.
-        '''
+        #set up before each run
         app.config['TESTING'] = True
         app.config['DEBUG'] = False
         app.config['WTF_CSRF_ENABLED'] = False
@@ -31,9 +29,7 @@ class Pages(unittest.TestCase):
         db.create_all()
 
     def tearDown(self):
-        '''
-        After each test, get rid of the data.
-        '''
+        #after each test, get rid of the data
         db.session.remove()
         db.drop_all()
 
@@ -59,19 +55,23 @@ class Pages(unittest.TestCase):
             follow_redirects=True)
 
     def test_home(self):
+        #test: if the home page is working
         req = self.app.get('/', follow_redirects=True)
         self.assertEqual(req.status_code, 200)
 
     def test_registration(self):
+        #test: if the registration page is working
         req = self.registration(
             'test-username', 'username@test.com', 'test123', 'test123')
         self.assertEqual(req.status_code, 200)
 
     def test_login_valid(self):
+        #test: if the login page is working
         response = self.login('username@test.com', 'test123')
         self.assertEqual(response.status_code, 200)
 
     def test_logout(self):
+        #test: if the logout is working
         response = self.logout()
         self.assertEqual(response.status_code, 200)
 
@@ -98,6 +98,7 @@ class Functions(unittest.TestCase):
         db.drop_all()
 
     def test_add_task(self):
+        #test: if adding tasks works
         req = self.app.post('/add',
                             data=dict(title="New task",
                                       description="Description",
@@ -107,21 +108,24 @@ class Functions(unittest.TestCase):
         self.assertEqual(req.status_code, 200)
 
     def test_move_to_do(self):
+        #test: if moving tasks to "do" works
         req = self.app.get('/do/1', follow_redirects=True)
         self.assertEqual(req.status_code, 200)
 
     def test_move_to_done(self):
+        #test: if moving tasks to "done" works
         req = self.app.get('/done/1', follow_redirects=True)
         self.assertEqual(req.status_code, 200)
 
     def test_move_to_todo(self):
+        #test: if moving tasks to "to-do" works
         req = self.app.get('/todo/1', follow_redirects=True)
         self.assertEqual(req.status_code, 200)
 
     def test_delete(self):
+        #test: if deleting tasks works
         req = self.app.get('/delete/1', follow_redirects=True)
         self.assertEqual(req.status_code, 200)
-
 
 if __name__ == "__main__":
     unittest.main()

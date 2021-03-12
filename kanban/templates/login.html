@@ -1,26 +1,26 @@
 {% extends "base.html" %} {% block content %}
-  
-<!--Using WTForm to show the forms for login--> 
 
-  <div class="content-section" style="margin-bottom:30px; height:auto; padding:40px;">
+<!--Using WTForm to show the forms for login-->
+
+<div class="content-section" style="margin-bottom:30px; height:auto; padding:40px;">
   <form method="POST" action="">
     {{ form.hidden_tag() }}
     <h2 style='text-align: center;'>Please log in!</h2>
     <fieldset class="form-group">
 
-    <div class="form-group" style="text-align: center; width:auto;margin-top:30px;">
+      <div class="form-group" style="text-align: center; width:auto;margin-top:30px;">
 
-      {% if form.email.errors %}
-      {{form.email(class="form-control form-control-lg is-invalid")}}
-      <div class="invalid-feedback">
-        {% for error in form.email.errors %}
-        <span>{{ error }}</span>
-        {% endfor %}
+        {% if form.email.errors %}
+        {{form.email(class="form-control form-control-lg is-invalid")}}
+        <div class="invalid-feedback">
+          {% for error in form.email.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {%else%}
+        {{form.email(placeholder="Email address")}}
+        {% endif %}
       </div>
-      {%else%}
-      {{form.email(placeholder="Email address")}}
-      {% endif %}
-    </div>
       <div class="form-group">
         {% if form.password.errors %}
         {{form.password(class="form-control form-control-lg is-invalid")}}
@@ -34,7 +34,7 @@
         {% endif %}
       </div>
     </fieldset>
-    <div class="input['submit']" >
+    <div class="input['submit']">
       {{form.submit()}}
     </div>
   </form>

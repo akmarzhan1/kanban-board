@@ -1,4 +1,3 @@
-# kanban/test_basic.py
 from datetime import datetime
 import os
 import unittest

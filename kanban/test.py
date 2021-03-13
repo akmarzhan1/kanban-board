@@ -12,7 +12,7 @@ from kanban import app, db
 from flask_login import login_user
 from flask_testing import TestCase
 
-TEST_DB = 'testing.db'
+TEST_DB = 'test.db'
 
 
 class Pages(unittest.TestCase):

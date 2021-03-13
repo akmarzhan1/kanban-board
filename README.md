@@ -20,9 +20,9 @@ Below is the screenshot from the main page:
 # Run the code
 Open your terminal or CMD and type the following from the cs162-kanban root directory.
 ```python
-python3.6 -m venv .venv 
+python -m venv .venv 
 source .venv/bin/activate
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 export FLASK_APP=run.py
 flask run
 ```
@@ -35,7 +35,7 @@ Go to the kanban root directory and run the following:
 python test.py
 ```
 
-You should get something like the below (make sure the app is running):
+You should get something like the below:
 <img width="508" alt="Screen Shot 2021-03-13 at 05 59 40" src="https://user-images.githubusercontent.com/47840436/111010637-4edd8800-83c1-11eb-8a56-75a0a9e13153.png">
 
 ### References

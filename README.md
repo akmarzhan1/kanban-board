@@ -14,7 +14,8 @@ Below is a screenshot of the implementation with three sections: "To-do", "Doing
 * register new users.
 
 Below is the screenshot from the main page:
-<img width="930" alt="Screen Shot 2021-03-13 at 05 42 59" src="https://user-images.githubusercontent.com/47840436/111009885-002eee80-83bf-11eb-8c3a-949c3e519792.png">
+<img width="1175" alt="Screen Shot 2021-03-13 at 06 03 35" src="https://user-images.githubusercontent.com/47840436/111010834-daefaf80-83c1-11eb-9abd-d66cf8fdd12d.png">
+
 
 # Run the code
 Open your terminal or CMD and type the following from the cs162-kanban root directory.

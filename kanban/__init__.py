@@ -8,11 +8,11 @@ app.config['SECRET_KEY'] = 'secretkeynoonewillknow'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
 
-# login and user authentication 
+#using this for authentication
 bcrypt = Bcrypt()
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = "info"
 
-# has to put it down here to avoid circular importing
+#circular import prevention
 from kanban import routes

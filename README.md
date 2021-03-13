@@ -67,8 +67,11 @@ path/cs162-kanban
 │   │   └── reg.html
 │   ├── static/
 │   │   ├── favi.ico
-│   │   └── main.css
+│   │   └── styling.css
+│   ├── data.db
+│   ├── test.db
 │   └── test.py
+├── README.md
 ├── requirements.txt
 └── run.py
 

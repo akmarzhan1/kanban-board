@@ -3,7 +3,7 @@
 <!--Form for adding tasks-->
 
 <h1 style="text-align: center; margin-bottom:25px;"> Welcome back, {{current_user.username}}!</h1>
-<div class="card" style="margin-bottom:30px; height:auto; margin-left:28px; margin-right:35px;">
+<div class="card" style="margin-bottom:30px; width:94%; height:auto; margin-left:28px; margin-right:35px;">
 
     <form action="{{ url_for('add_todo')}}" method="POST">
         <div class="form-left-column">
@@ -24,7 +24,7 @@
 
 <!--Showing three types of tasks for each user-->
 
-<div class="container">
+<div class="container" style="margin-bottom:50px;">
     <div class="column">
         <h5 style="background-color: rgb(172, 172, 172); color:rgb(65, 65, 65)">To-do</h5>
 

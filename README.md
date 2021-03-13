@@ -16,6 +16,16 @@ Below is a screenshot of the implementation with three sections: "To-do", "Doing
 Below is the screenshot from the main page:
 <img width="1175" alt="Screen Shot 2021-03-13 at 06 03 35" src="https://user-images.githubusercontent.com/47840436/111010834-daefaf80-83c1-11eb-9abd-d66cf8fdd12d.png">
 
+# Setting up the database
+I am using sqlite database and, in theory, you can use the one I have created and just write over it, but you could also create your own by:
+```python
+python3
+from kanban import db
+db.session.drop_all()
+db.session.create_all()
+```
+
+
 
 # Run the code
 Open your terminal or CMD and type the following from the cs162-kanban root directory.
@@ -39,6 +49,26 @@ You should get something like the below:
 
 
 <img width="508" alt="Screen Shot 2021-03-13 at 05 59 40" src="https://user-images.githubusercontent.com/47840436/111010637-4edd8800-83c1-11eb-8a56-75a0a9e13153.png">
+
+
+# Project Structure
+path/cs162-kanban
+├── kanban/
+│   ├── __init__.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── routes.py
+│   ├── templates/
+│   │   ├── base.html
+│   │   ├── home.html
+│   │   ├── login.html
+│   │   └── reg.html
+│   ├── static/
+│   │   ├── favi.ico
+│   │   └── main.css
+│   └── test.py
+├── requirements.txt
+└── run.py
 
 ### References
 Creating a Todo List App With Flask and Flask-SQLAlchemy: https://www.youtube.com/watch?v=4kD-GRF5VPs

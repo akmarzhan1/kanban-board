@@ -52,6 +52,8 @@ You should get something like the below:
 
 
 # Project Structure
+
+```
 path/cs162-kanban
 ├── kanban/
 │   ├── __init__.py
@@ -69,6 +71,8 @@ path/cs162-kanban
 │   └── test.py
 ├── requirements.txt
 └── run.py
+
+```
 
 ### References
 Creating a Todo List App With Flask and Flask-SQLAlchemy: https://www.youtube.com/watch?v=4kD-GRF5VPs

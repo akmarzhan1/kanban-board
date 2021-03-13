@@ -7,7 +7,7 @@ A Kanban board designed as part of my CS162 assignment during Spring 2021.
 # Kanban Board
 Below is a screenshot of the implementation with three sections: "To-do", "Doing," and "Done." The app can:
 * create new tasks (with description and due date);
-* move tasks from any column to any other column (e.g., from "Done" to "To-do";
+* move tasks from any column to any other column (e.g., from "Done" to "To-do");
 * delete tasks from any column;
 * log in users;
 * log out users;

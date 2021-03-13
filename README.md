@@ -40,5 +40,7 @@ You should get something like the below (make sure the app is running):
 
 ### References
 Creating a Todo List App With Flask and Flask-SQLAlchemy: https://www.youtube.com/watch?v=4kD-GRF5VPs
+
 WTForm Documentation: https://wtforms.readthedocs.io/en/2.3.x/
+
 SQL Alchemy Documentation: https://www.sqlalchemy.org/

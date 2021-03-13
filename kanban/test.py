@@ -66,13 +66,13 @@ class Pages(unittest.TestCase):
 
     def test_login_valid(self):
         #test: if the login page is working
-        response = self.login('username@test.com', 'test123')
-        self.assertEqual(response.status_code, 200)
+        req = self.login('username@test.com', 'test123')
+        self.assertEqual(req.status_code, 200)
 
     def test_logout(self):
         #test: if the logout is working
-        response = self.logout()
-        self.assertEqual(response.status_code, 200)
+        req = self.logout()
+        self.assertEqual(req.status_code, 200)
 
 class Functions(unittest.TestCase):
 

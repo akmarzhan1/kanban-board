@@ -21,8 +21,8 @@ I am using sqlite database and, in theory, you can use the one I have created an
 ```python
 python3
 from kanban import db
-db.session.drop_all()
-db.session.create_all()
+db.drop_all()
+db.create_all()
 ```
 
 

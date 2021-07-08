@@ -1,4 +1,4 @@
-# CS162-Kanban-Board
+# Kanban-Board
 A Kanban board designed as part of my CS162 assignment during Spring 2021. 
 
 **Keywords**: Python, Flask, HTML, CSS, SQL. 

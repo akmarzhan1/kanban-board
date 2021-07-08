@@ -54,7 +54,7 @@ You should get something like the below:
 # Project Structure
 
 ```
-path/cs162-kanban
+path/kanban-board
 ├── kanban/
 │   ├── __init__.py
 │   ├── forms.py
